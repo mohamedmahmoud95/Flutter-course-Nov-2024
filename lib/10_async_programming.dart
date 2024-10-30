@@ -59,6 +59,9 @@ Future<void> fetchUserAge2() async {
 // //6- Future.wait
 //
 // //The Future.wait() function is used to wait for multiple Futures to complete.
+// //It takes a list of Futures as input and returns a new Future that completes when all the input Futures have completed.
+// //they all start at the same time, and the Future.wait() function waits for all of them to complete.
+
 // //example:
 // void main() {
 //   Future.wait([
@@ -69,3 +72,22 @@ Future<void> fetchUserAge2() async {
 //     print('User ages are: $values');
 //   });
 // }
+
+//Notice the difference between Future.wait, and the simple await keyword:
+//example:
+void fetchAllAges() async{
+  var age1 = await fetchUserAge();
+  print("User age is: $age1");
+  var age2 = await fetchUserAge();
+  print("User age is: $age2");
+  var age3 = await fetchUserAge();
+  print("User age is: $age3");
+  print('User ages are: $age1, $age2, $age3');
+}
+
+void main() {
+  fetchAllAges();
+}
+//The difference is that the Future.wait() function waits for all the Futures to complete before calling the callback, but one doesn't have to wait for the other to complete(they all start at the same time, and each one takes it time to complete in parallel).
+// while the await keyword waits for each Future to complete before moving on to the next one.
+// //=========================================================================================================//
