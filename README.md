@@ -1,8 +1,12 @@
 
 Aloha there 
+
 Welcome to my #Flutter Course Repository!
+
 Each branch in this repository corresponds to a specific topic or session in the course. 
+
 So you can follow along with the course content and refer to the branches for specific code examples and projects.
+
 
 📂 #Repository Structure
 
